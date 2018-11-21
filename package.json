@@ -1,0 +1,19 @@
+{
+  "name": "@assertchris/attempt-promise",
+  "version": "1.0.0",
+  "description": "Alternative to try-catch wrapping async/await",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "homepage": "https://github.com/assertchris/attempt-promise#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/assertchris/attempt-promise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/assertchris/attempt-promise/issues"
+  },
+  "author": "Christopher Pitt <cgpitt@gmail.com> (https://assertchris.io)",
+  "license": "MIT"
+}
