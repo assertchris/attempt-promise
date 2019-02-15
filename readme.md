@@ -1,3 +1,7 @@
+# attempt-promise
+
+[![support](https://enjoy.gitstore.app/repositories/badge-assertchris/attempt-promise.svg)](https://enjoy.gitstore.app/repositories/assertchris/attempt-promise)
+
 `async` and `await` are great! SO much better than callbacks all over the place, and helpful for showing that functions are asynchronous, without having to read the function.
 
 What's not so great is having to wrap calls to `async` functions in a try-catch.
@@ -66,7 +70,7 @@ const [err2, products] = await attempt(
   Product.where("user_id", user.id)
     .orderBy("updated_at", "desc")
     .limit(50)
-    .fetch(),
+    .fetch()
 );
 
 if (err2) {
@@ -76,6 +80,8 @@ if (err2) {
 
 response.ok("here are your products...", products);
 ```
+
+## Installing
 
 Use one of these to install:
 
