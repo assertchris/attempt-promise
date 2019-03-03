@@ -81,6 +81,36 @@ if (err2) {
 response.ok("here are your products...", products);
 ```
 
+We also got `attempt.all`, an alternative to `Promise.allSettled`:
+
+```js
+const attempt = require("@assertchris/attempt-promise");
+
+const id = session.get("id");
+
+const [errs, [user, products]] = await attempt([
+  User.find(id),
+  Product.where("user_id", user.id)
+    .orderBy("updated_at", "desc")
+    .limit(50)
+    .fetch()
+]);
+
+if (!errs) {
+  response.ok("here are your products...", products);
+} else {
+  const [err1, err2] = errs;
+  if (err1) {
+    response.error("Oops! No user...");
+  }
+  if (err2) {
+    response.error("Oops! Missing products...");
+  }
+}
+```
+
+
+
 ## Installing
 
 Use one of these to install:
