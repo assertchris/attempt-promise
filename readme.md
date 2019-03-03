@@ -88,7 +88,7 @@ const attempt = require("@assertchris/attempt-promise");
 
 const id = session.get("id");
 
-const [errs, [user, products]] = await attempt([
+const [errs, [user, products]] = await attempt.all([
   User.find(id),
   Product.where("user_id", user.id)
     .orderBy("updated_at", "desc")
